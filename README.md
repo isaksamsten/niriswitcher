@@ -9,6 +9,8 @@ https://github.com/user-attachments/assets/81beb414-6367-4d6f-aa2b-9c55534913b3
 
 ## Installation
 
+### pipx
+
 To install the development version use:
 
 ```bash
@@ -29,6 +31,8 @@ to install a release version.
 > These are the names of the packages on Fedora, but I'm sure they are
 > distributed for other distributions.
 
+### Fedora
+
 For users of Fedora, I maintain a COPR built for every release.
 
 [![Copr build status](https://copr.fedorainfracloud.org/coprs/isaksamsten/niriswitcher/package/niriswitcher/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/isaksamsten/niriswitcher/package/niriswitcher/)
@@ -38,7 +42,15 @@ dnf copr enable isaksamsten/niriswitcher
 dnf install niriswitcher
 ```
 
-### Configuration
+### Arch-based distributions
+
+niriswitcher is now available in the AUR. You can use any of your AUR helpers to install.
+
+```bash
+yay -S niriswitcher
+```
+
+## Configuration
 
 First we need to execute the `niriswitcher` application. The program is
 deamonized and waits for `USR1` signal to be shown. In the niri
@@ -63,7 +75,7 @@ bind {
 > [!NOTE]
 > Remember to synchronize the keybinding set in Niri, with the one set for `niriswitcher`. For example, if you use `Mod+Tab` to trigger `niriswitcher` ensure that `modifier=Mod` in `config.ini` (see below).
 
-#### Keybindings
+### Keybindings
 
 By default, `niriswitcher` uses the following keybindings:
 
@@ -78,7 +90,7 @@ By default, `niriswitcher` uses the following keybindings:
 
 The default mappings and modifier key can be configured in the `config.ini` file.
 
-#### Options
+### Options
 
 `niriswitcher` has a few options that we can change
 
@@ -153,7 +165,7 @@ bindings.
 > `Super+Escape` reaching `niriswitcher`. Please select another binding for
 > `abort`.
 
-#### Themes
+### Themes
 
 We can also change/improve the style of the switcher using a `style.css` file
 in the same configuration directory.
@@ -211,22 +223,24 @@ resources folder for default colors in dark mode):
   --label-color: rgb(58, 58, 60);
   --alternate-label-color: rgb(44, 44, 46);
   --dim-label-color: rgb(142, 142, 147);
-  --border-color: rgba(199, 199, 204, .95);
-  --highlight-color: rgba(209, 209, 214,0.95);
+  --border-color: rgba(199, 199, 204, 0.95);
+  --highlight-color: rgba(209, 209, 214, 0.95);
   --urgency-color: rgb(255, 69, 58);
   --indicator-focus-color: rgba(10, 132, 255, 0.95);
-  --indicator-color: rgba(209, 209, 214, .95);
+  --indicator-color: rgba(209, 209, 214, 0.95);
 }
 ```
-##### Default light mode style
+
+#### Default light mode style
 
 ![Image](https://github.com/user-attachments/assets/10593e6a-53d7-4359-951d-59270088bbc6)
 
-##### Default dark mode style
+#### Default dark mode style
 
 ![Image](https://github.com/user-attachments/assets/33ad582f-4540-428a-8fbc-849c35c7ec76)
 
 [Input on the default design is welcome](https://github.com/isaksamsten/niriswitcher/issues/8)
-# Known issues
+
+## Known issues
 
 If `Alt` (the modifier key) is released before `niriswitcher` has been fully initialized, the window will not close unless the modifier key is pressed and released (to change to the next application) or `Esc` is pressed to close the window.
