@@ -52,6 +52,13 @@ yay -S niriswitcher
 
 ### Nix
 
+A [Nix package](https://search.nixos.org/packages?channel=unstable&show=niriswitcher) for niriswitcher is available. Add the following to your configuration:
+```nix
+environment.systemPackages = with pkgs; [
+  niriswitcher
+];
+```
+
 niriswitcher is also available on NUR. Nix users can setup NUR by following [this](https://nur.nix-community.org/documentation) guide, but a short summary is provided below.
 
 > [!NOTE]
