@@ -124,6 +124,7 @@ def new_app_icon_or_default(app_info: Gio.DesktopAppInfo, size):
     Returns:
         Gtk.Image: A Gtk.Image widget displaying the application's icon or a default icon.
     """
+    icon_name = ""
     if app_info:
         icon = app_info.get_icon()
         if isinstance(icon, Gio.ThemedIcon):
