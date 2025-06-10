@@ -68,61 +68,7 @@ environment.systemPackages = with pkgs; [
 ];
 ```
 
-niriswitcher is also available on NUR. Nix users can setup NUR by following [this](https://nur.nix-community.org/documentation) guide, but a short summary is provided below.
-
-> [!NOTE]
-> NUR packages are built against Nixpkgs unstable.
-
-<details>
-
-<summary>
-
-#### With Flakes (without using Home Manager)
-
-</summary>
-
-For a simple flake based setup:
-
-- Add NUR to your flake inputs
-  ```nix
-  nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-  };
-  ```
-- Add the NUR overlay to your NixOS configuration (optional)
-  ```nix
-  {
-      nixpkgs.overlays = [ nur.overlays.default ];
-  }
-  ```
-- To your packages list, add:
-  - `pkgs.nur.repos.Vortriz.niriswitcher` if you added the overlay
-  - `nur.legacyPackages."${pkgs.system}".repos.Vortriz.niriswitcher` if you did not use the overlay
-
-</details>
-
-<details>
-
-<summary>
-
-#### With Flakes (using Home Manager)
-
-</summary>
-
-- Add NUR to your flake inputs
-  ```nix
-  nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-  };
-  ```
-- Add `nur.legacyPackages."${pkgs.system}".repos.Vortriz.homeManagerModules.niriswitcher` to your `imports` in `home.nix`
-- Set `programs.niriswitcher.enable = true`. Optionally, you can configure niriswitcher with `programs.niriswitcher.config` (for `config.toml`) and `programs.niriswitcher.style` (for `style.css`). The exact configuration values for these options are detailed in the section ahead.
-
-For more information on using the module itself, check out the [source file](https://github.com/Vortriz/nur-packages/blob/main/modules/home-manager/niriswitcher.nix).
-
-</details>
+A [home-manager module](https://nix-community.github.io/home-manager/options.xhtml#opt-programs.niriswitcher.enable) is also available.
 
 ## Configuration
 
