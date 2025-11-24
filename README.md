@@ -1,3 +1,5 @@
+I will archive `niriswitcher` once https://github.com/YaLTeR/niri/pull/1704 (merged) has been released.
+
 # niriswitcher
 
 An application switcher for niri, with support for workspaces and automatic light and dark mode.
